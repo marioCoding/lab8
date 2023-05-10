@@ -1,5 +1,6 @@
 // Session storage
   const btn = document.getElementById('btn1');
+  const container1 = document.getElementById("counterSpace");
   btn.addEventListener('click', clickCounter);
 
   function clickCounter(e) {
@@ -10,18 +11,26 @@
       } else {
         sessionStorage.setItem('clickcount', 1);
       }
-      
-      document.getElementById("result").innerHTML =
+  
+      container1.innerHTML =
         `You have clicked the button ${sessionStorage.getItem('clickcount')} time(s).`;
     } else {
-      document.getElementById("result").innerHTML =
-        "Sorry, your browser does not support web storage...";
+      container1.innerHTML =
+        "Sorry, your browser does not support web storage.";
     }
   }
 
 // Local storage
-  let myName = localStorage.setItem("name", "Mario Salinas");
+  const container2 = document.getElementById("nameSpace");
   document.getElementById("showName").addEventListener('click', e => {
-    alert(localStorage.getItem('name'))
+    // Check if browser supports web storage
+    if (typeof(Storage) !== "undefined") {
+      // set item (store)
+      localStorage.setItem("name", "Mario Salinas");
+      // get item (retrieve)
+      container2.innerHTML = localStorage.getItem("name");
+    } else {
+      container2.innerHTML = "Sorry, your browser does not support web storage.";
+    }
   });
 

@@ -33,14 +33,19 @@ p {
   display: block;
   margin: 5% auto;
 }
-
+/* Article 2 */
 .article2 {
   border: 2px solid #000;
   background-color: beige;
   margin-top: 2%;
+  text-align: center;
 }
 #showName {
   padding: 5% 10%;
   display: block;
   margin: 15% auto;
+}
+#nameSpace {
+  text-align: center;
+  font-style: italic;
 }
